@@ -28,9 +28,14 @@ function ConvertHandler() {
     };
 
     this.getReturnUnit = function (initUnit) {
-        let result;
-
-        return result;
+        switch (initUnit) {
+          case 'kg': return 'lbs';
+          case 'lbs': return 'kg';
+          case 'km': return 'mi';
+          case 'mi': return 'km';
+          case 'gal': return 'L';
+          case 'L': return 'gal';
+        }
     };
 
     this.spellOutUnit = function (unit) {
