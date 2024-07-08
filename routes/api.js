@@ -27,9 +27,12 @@ module.exports = function (app) {
       res.json({ string: 'invalid unit'})
     }
 
+    // Get return unit
+    const returnUnit = convertHandler.getReturnUnit(initUnit);
+
     // Send response
-    // For tests
-    res.json({ string: input, jsonResult: 'jsonYes'})
+    // TODO
+    res.json({ initNum: initNum, initUnit: initUnit, returnUnit: returnUnit})
 
     
   })
