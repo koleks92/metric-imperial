@@ -30,9 +30,15 @@ module.exports = function (app) {
     // Get return unit
     const returnUnit = convertHandler.getReturnUnit(initUnit);
 
+    // Get return number
+    const returnNum = convertHandler.convert(initNum, initUnit);
+
+    // Get string
+    const string = convertHandler.getString(initNum, initUnit, returnNum, returnUnit);
+
     // Send response
     // TODO
-    res.json({ initNum: initNum, initUnit: initUnit, returnUnit: returnUnit})
+    res.json({ initNum: initNum, initUnit: initUnit, returnNum: returnNum, returnUnit: returnUnit, string: string})
 
     
   })
