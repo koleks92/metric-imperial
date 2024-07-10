@@ -39,24 +39,36 @@ function ConvertHandler() {
     };
 
     this.spellOutUnit = function (unit) {
-        let result;
-
-        return result;
+        switch (unit) {
+            case 'kg': return 'kilograms';
+            case 'lbs': return 'pounds';
+            case 'km': return 'kilometers';
+            case 'mi': return 'miles';
+            case 'gal': return 'galons';
+            case 'L': return 'liters';
+        };
     };
 
     this.convert = function (initNum, initUnit) {
         const galToL = 3.78541;
         const lbsToKg = 0.453592;
         const miToKm = 1.60934;
-        let result;
-
-        return result;
+        
+        switch (initUnit) {
+            case 'kg': return (initNum / lbsToKg);
+            case 'lbs': return (initNum * lbsToKg);
+            case 'km': return (initNum  / miToKm);
+            case 'mi': return (initNum * miToKm);
+            case 'L': return (initNum / galToL);
+            case 'gal': return (initNum * galToL);
+        }
     };
 
     this.getString = function (initNum, initUnit, returnNum, returnUnit) {
-        let result;
-
-        return result;
+        initUnitString = this.spellOutUnit(initUnit);
+        returnUnitString = this.spellOutUnit(returnUnit);
+        
+        return `${initNum} ${initUnitString} converts to ${returnNum} ${returnUnitString}`;
     };
 }
 
