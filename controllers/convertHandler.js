@@ -15,7 +15,18 @@ function ConvertHandler() {
           return 1;
         } else {
           try {
-            return parseFloat(number);
+            if (number.includes('/')) {
+              let first, second = number.split('/');
+              if (second.includes('/') || second.includes('.')) {
+                return false
+              } else {
+                number = parseFloat(first) / parseFloat(second);
+              }
+            } else if (number.includes('.')) {
+              number = parseFloat(number);
+            }
+            
+            return number;
           } catch (err) {
             return false;
           }
