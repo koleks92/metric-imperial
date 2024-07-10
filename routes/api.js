@@ -20,11 +20,11 @@ module.exports = function (app) {
 
     // Check if error
     if (!initNum && !initUnit) {
-      res.json({ string: 'invalid number and unit'})
+      res.json('invalid number and unit')
     } else if (!initNum) {
-      res.json({ string: 'invalid number'})
+      res.json( 'invalid number' )
     } else if (!initUnit) {
-      res.json({ string: 'invalid unit'})
+      res.json('invalid unit' )
     }
 
     // Get return unit
