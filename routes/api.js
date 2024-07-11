@@ -38,7 +38,7 @@ module.exports = function (app) {
 
     // Send response
     // TODO
-    res.json({ initNum: initNum, initUnit: initUnit, returnNum: returnNum, returnUnit: returnUnit, string: string})
+    res.json({ initNum, initUnit, returnNum, returnUnit, string})
 
     
   })
