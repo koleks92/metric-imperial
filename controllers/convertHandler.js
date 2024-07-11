@@ -16,14 +16,20 @@ function ConvertHandler() {
         } else {
           try {
             if (number.includes('/')) {
-              let first, second = number.split('/');
-              if (second.includes('/') || second.includes('.')) {
-                return false
+              let split = number.split('/');
+              if (split.length > 2) {
+                return false;
               } else {
-                number = parseFloat(first) / parseFloat(second);
+                number = parseFloat(split[0]) / parseFloat(split[1]);
               }
             } else if (number.includes('.')) {
-              number = parseFloat(number);
+              let split = number.split('.');
+              if (split.length > 2) {
+                return false;
+              } else {
+                number = parseFloat(number);
+              }
+  
             }
             
             return number;
