@@ -31,14 +31,14 @@ module.exports = function (app) {
     const returnUnit = convertHandler.getReturnUnit(initUnit);
 
     // Get return number
-    const returnNum = convertHandler.convert(initNum, initUnit);
+    const returnNum = convertHandler.convert(initNum, initUnit).toFixed(5);
 
     // Get string
     const string = convertHandler.getString(initNum, initUnit, returnNum, returnUnit);
 
     // Send response
     // TODO
-    res.json({ initNum, initUnit, returnNum, returnUnit, string})
+    res.json({ initNum: parseFloat(initNum), initUnit: initUnit, returnNum: parseFloat(returnNum), returnUnit: returnUnit, string: string })
 
     
   })
